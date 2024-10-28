@@ -1,0 +1,43 @@
+SECTION - A:
+
+1 A MVN CLEAN
+2. D DEBUG
+3. A. post-integration-test
+4  A. TRUE
+5. A. YES
+6  A. PROJECT OBJECT MODEL
+7 A. POM
+8 D. All of the above
+9 D. Dependency
+10 B. Builds the project and packages the resulting JAR file into the target directory.
+11 A. mvn install
+12 B. pom.xml
+13 A. Local -> Remote - Maven Central
+14 D. All of the above
+15 D. All of the above
+16 D. All of the above
+17 C. maven -version
+18 C. generate-test-sources
+19 C. Both of the above.
+20 B. False
+
+SECTION - B:
+1 D. Web-Based Repository Hosting Service
+2 A. GIT push
+3 B. GIT log
+4 B. GIT status
+5 D. GIT stage -a
+6 D. GIT commit -m "I'm coding!"
+7 C. GIT clone
+8 A. GIT push <remote> <branch>
+9 A. GIT add, git commit, git push
+10 B. GIT checkout
+11 A. GIT reset
+12 D. git checkout -b
+13 A. By default, a push doesn’t send tags to the remote repository.
+14 B. All new and updated files from the working directory are staged to the index.
+15 A. Any number of commits.
+
+name - kurien pallattu
+mobile - 972-821-2200
+add- dallas
