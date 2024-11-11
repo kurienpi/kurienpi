@@ -1,0 +1,10 @@
+create database zorba_exams;
+Create table employee (emp_id int, emp_name varchar(255), emp_address varchar (255), emp_salary decimal (12, 2),emp_mobile int (10),
+ dept_name varchar (255), doj datetime);
+
+
+
+ALTER TABLE `zorba_exams`.`employee` 
+CHANGE COLUMN `emp_name` `emp_name` VARCHAR(255) NOT NULL ,
+CHANGE COLUMN `dept_name` `dept_name` VARCHAR(255) NOT NULL ,
+CHANGE COLUMN `doj` `doj` DATETIME NOT NULL DEFAULT '1970-01-01' ;
