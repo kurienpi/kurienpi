@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.xmlBased.entity.Teacher" table="Teacher">
+        <id name="teacherId" column="teacher_id">
+            <generator class="increment"/>
+        </id>
+        <property name="teacherName" column="teacher_name"/>
+        <property name="teacherQualification" column="teacher_qualification"/>
+        <property name="experienceOfTeaching" column="experience_of_teaching"/>
+        <many-to-one name="subject" class="com.tuition.entity.Subject" column="subject_id"/>
+        <set name="students" table="teacher_student">
+            <key column="teacher_id"/>
+            <many-to-many class="com.tuition.entity.Student" column="student_id"/>
+        </set>
+    </class>
+</hibernate-mapping>
