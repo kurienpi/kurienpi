@@ -5,65 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="464f2f7b-9e7c-4eb6-8c04-b3279fc15c71" name="Changes" comment="">
-      <change afterPath="G:/kurienpi/NewProject/untitled/.gitignore" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/.idea/.gitignore" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/.idea/misc.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/ear/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/ejbs/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/ejbs/src/main/resources/META-INF/ejb-jar.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/primary-source/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/projects/logging/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/projects/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/servlets/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/servlets/servlet/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/servlets/servlet/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/NewProject/untitled/servlets/servlet/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/.gitignore" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/.idea/.gitignore" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/.idea/misc.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/ear/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/ejbs/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/ejbs/src/main/resources/META-INF/ejb-jar.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/primary-source/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/projects/logging/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/projects/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/servlets/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/servlets/servlet/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/servlets/servlet/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/exam-12.1.24/newhba/servlets/servlet/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/.gitignore" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/.idea/.gitignore" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/.idea/misc.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/pom.xml" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/dao/PassengerDAO.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/main/RailwayReservationSystem.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/model/GeneralPassenger.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/model/Passenger.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/model/PhysicallyHandicappedPassenger.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/model/SeniorCitizenPassenger.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/java/util/HibernateUtil.java" afterDir="false" />
-      <change afterPath="G:/kurienpi/railreserv_exam12.08/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/RailwayReservationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/RailwayReservationSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="G:/kurienpi" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2pxenrlOczvml3BGVzWiHTWipTz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -76,13 +40,27 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "G:/kurienpi/railreserv_exam12.08"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\kurienpi\railreserv_exam12.08\src\main\java\util" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="railreserv_exam12.08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="railreserv_exam12.08" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

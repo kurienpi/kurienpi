@@ -1,122 +1,151 @@
-package main;
-
-import model.*;
-import dao.PassengerDAO;
+package model;
 import java.util.List;
 import java.util.Scanner;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import model.*; // Make sure to replace 'main.model' with the actual package name for your model classes
 
 public class RailwayReservationSystem {
+    private static SessionFactory sessionFactory;
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        PassengerDAO passengerDAO = new PassengerDAO();
+        try {
+            // Create SessionFactory
+            sessionFactory = new Configuration()
+                    .configure("hibernate.cfg.xml")
+                    .addAnnotatedClass(Train.class)
+                    .addAnnotatedClass(LocalTrain.class)
+                    .addAnnotatedClass(IntercityTrain.class)
+                    .addAnnotatedClass(SuperFastTrain.class)
+                    .addAnnotatedClass(GoodsTrain.class)
+                    .addAnnotatedClass(Passenger.class)
+                    .addAnnotatedClass(GeneralPassenger.class)
+                    .addAnnotatedClass(SeniorCitizenPassenger.class)
+                    .addAnnotatedClass(PhysicallyHandicappedPassenger.class)
+                    .buildSessionFactory();
 
-        // Input and Save General Passengers
-        System.out.println("--- General Passengers ---");
-        for (int i = 1; i <= 3; i++) {
-            System.out.println("Enter General Passenger " + i + " Details:");
+            // Create and save trains
+            createAndSaveTrain();
 
-            System.out.print("Name: ");
-            String name = scanner.nextLine();
+            // Fetch and display train information
+            fetchTrainInformation();
 
-            System.out.print("Email: ");
-            String email = scanner.nextLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (sessionFactory != null) {
+                sessionFactory.close();
+            }
+            scanner.close();
+        }
+    }
 
-            System.out.print("Mobile: ");
-            String mobile = scanner.nextLine();
+    private static void createAndSaveTrain() {
+        Session session = sessionFactory.getCurrentSession();
 
-            System.out.print("Destination: ");
-            String destination = scanner.nextLine();
+        try {
+            session.beginTransaction();
 
-            System.out.print("Seat Number: ");
-            String seatNumber = scanner.nextLine();
-
-            System.out.print("Coach Type: ");
-            String coachType = scanner.nextLine();
-
-            GeneralPassenger generalPassenger = new GeneralPassenger(
-                    name, email, mobile, destination, seatNumber, coachType
+            // Create Local Train
+            LocalTrain localTrain = new LocalTrain(
+                    "Mumbai Local", 6, "CST", "Thane",
+                    "Mon,Wed,Fri", 60.5, 50.0, "Hourly"
             );
-            passengerDAO.saveGeneralPassenger(generalPassenger);
-        }
 
-        // Input and Save Senior Citizen Passengers
-        System.out.println("\n--- Senior Citizen Passengers ---");
-        for (int i = 1; i <= 3; i++) {
-            System.out.println("Enter Senior Citizen Passenger " + i + " Details:");
-
-            System.out.print("Name: ");
-            String name = scanner.nextLine();
-
-            System.out.print("Email: ");
-            String email = scanner.nextLine();
-
-            System.out.print("Mobile: ");
-            String mobile = scanner.nextLine();
-
-            System.out.print("Destination: ");
-            String destination = scanner.nextLine();
-
-            System.out.print("Seat Number: ");
-            String seatNumber = scanner.nextLine();
-
-            System.out.print("Discount: ");
-            double discount = scanner.nextDouble();
-            scanner.nextLine(); // Consume newline
-
-            System.out.print("Senior Citizen ID: ");
-            String seniorCitizenId = scanner.nextLine();
-
-            SeniorCitizenPassenger seniorCitizenPassenger = new SeniorCitizenPassenger(
-                    name, email, mobile, destination, seatNumber, discount, seniorCitizenId
+            // Create Intercity Train
+            IntercityTrain intercityTrain = new IntercityTrain(
+                    "Mumbai Express", 8, "Mumbai", "Delhi",
+                    "All", 100.5, 800.0, 5
             );
-            passengerDAO.saveSeniorCitizenPassenger(seniorCitizenPassenger);
-        }
 
-        // Input and Save Physically Handicapped Passengers
-        System.out.println("\n--- Physically Handicapped Passengers ---");
-        for (int i = 1; i <= 3; i++) {
-            System.out.println("Enter Physically Handicapped Passenger " + i + " Details:");
-
-            System.out.print("Name: ");
-            String name = scanner.nextLine();
-
-            System.out.print("Email: ");
-            String email = scanner.nextLine();
-
-            System.out.print("Mobile: ");
-            String mobile = scanner.nextLine();
-
-            System.out.print("Destination: ");
-            String destination = scanner.nextLine();
-
-            System.out.print("Seat Number: ");
-            String seatNumber = scanner.nextLine();
-
-            System.out.print("Proof of Disability: ");
-            String proofOfDisability = scanner.nextLine();
-
-            PhysicallyHandicappedPassenger physicallyHandicappedPassenger = new PhysicallyHandicappedPassenger(
-                    name, email, mobile, destination, seatNumber, proofOfDisability
+            // Create Super Fast Train
+            SuperFastTrain superFastTrain = new SuperFastTrain(
+                    "Rajdhani", 12, "Delhi", "Kolkata",
+                    "Tue,Thu", 120.5, 1200.0, 500.0
             );
-            passengerDAO.savePhysicallyHandicappedPassenger(physicallyHandicappedPassenger);
+
+            // Create Goods Train
+            GoodsTrain goodsTrain = new GoodsTrain(
+                    "Freight Train", 10, "Mumbai", "Chennai",
+                    "Mon,Wed,Sat", 80.5, 0.0, "Containers"
+            );
+
+            // Save trains
+            session.save(localTrain);
+            session.save(intercityTrain);
+            session.save(superFastTrain);
+            session.save(goodsTrain);
+
+            // Create and Map Passengers
+            GeneralPassenger generalPassenger1 = new GeneralPassenger(
+                    "John Doe", "john@example.com", "1234567890",
+                    "Thane", "A1", "General"
+            );
+            generalPassenger1.setTrain(localTrain);
+            localTrain.getPassengers().add(generalPassenger1);
+
+            SeniorCitizenPassenger seniorPassenger = new SeniorCitizenPassenger(
+                    "Alice Smith", "alice@example.com", "9876543210",
+                    "Kolkata", "B2", 20.0, "SC001"
+            );
+            seniorPassenger.setTrain(superFastTrain);
+            superFastTrain.getPassengers().add(seniorPassenger);
+
+            PhysicallyHandicappedPassenger handicappedPassenger = new PhysicallyHandicappedPassenger(
+                    "Bob Johnson", "bob@example.com", "7890123456",
+                    "Delhi", "C3", "Disability Certificate"
+            );
+            handicappedPassenger.setTrain(intercityTrain);
+            intercityTrain.getPassengers().add(handicappedPassenger);
+
+            // Save passengers
+            session.save(generalPassenger1);
+            session.save(seniorPassenger);
+            session.save(handicappedPassenger);
+
+            session.getTransaction().commit();
+            System.out.println("Trains and Passengers saved successfully!");
+
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
+    }
 
-        // Fetch and Display Physically Handicapped Passengers
-        System.out.println("\n--- Physically Handicapped Passengers ---");
-        List<PhysicallyHandicappedPassenger> physicallyHandicappedPassengers =
-                passengerDAO.getPhysicallyHandicappedPassengers();
+    private static void fetchTrainInformation() {
+        Session session = sessionFactory.getCurrentSession();
 
-        for (PhysicallyHandicappedPassenger passenger : physicallyHandicappedPassengers) {
-            System.out.println("Name: " + passenger.getName());
-            System.out.println("Email: " + passenger.getEmail());
-            System.out.println("Mobile: " + passenger.getMobile());
-            System.out.println("Destination: " + passenger.getDestination());
-            System.out.println("Seat Number: " + passenger.getSeatNumber());
-            System.out.println("Proof of Disability: " + passenger.getProofOfDisability());
-            System.out.println("---");
+        try {
+            session.beginTransaction();
+
+            // Fetch all trains
+            List<Train> trains = session.createQuery("from Train", Train.class).getResultList();
+
+            System.out.println("\n--- Train Information ---");
+            for (Train train : trains) {
+                System.out.println("\nTrain Details:");
+                System.out.println("ID: " + train.getTrainId());
+                System.out.println("Name: " + train.getTrainName());
+                System.out.println("Start Station: " + train.getTrainStartStation());
+                System.out.println("End Station: " + train.getTrainEndStation());
+                System.out.println("Weekly Schedule: " + train.getTrainWeeklyDaysSchedule());
+            } // Closing the loop
+
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-
-        // Close resources
-        scanner.close();
     }
 }

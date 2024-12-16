@@ -5,14 +5,34 @@
 
 <hibernate-configuration>
     <session-factory>
-        <!-- JDBC Database connection settings -->
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/railway_reservation_db</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">Bhopal</property>
-
-        <!-- JDBC connection pool settings -->
-        <property name="connection.pool_size">10</property>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/railway_reservation_db</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Bhopal</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Validate or update the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show SQL statements -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Mapping classes -->
+        <mapping class="com.railway.model.Train"/>
+        <mapping class="com.railway.model.LocalTrain"/>
+        <mapping class="com.railway.model.IntercityTrain"/>
+        <mapping class="com.railway.model.SuperFastTrain"/>
+        <mapping class="com.railway.model.GoodsTrain"/>
+        <mapping class="com.railway.model.Passenger"/>
+        <mapping class="com.railway.model.GeneralPassenger"/>
+        <mapping class="com.railway.model.SeniorCitizenPassenger"/>
+        <mapping class="com.railway.model.PhysicallyHandicappedPassenger"/>
+    </session-factory>
+</hibernate-configuration>
