@@ -1,0 +1,27 @@
+<!-- applicationContext.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.property"/>
+
+    <!-- Rent Flats Configuration -->
+    <bean id="rentOneBHK" class="com.property.RentOfOneBHKFlat">
+        <property name="noOfPerson" value="2"/>
+    </bean>
+
+    <bean id="rentTwoBHK" class="com.property.RentOfTwoBHKFlat">
+        <property name="noOfPerson" value="3"/>
+        <property name="hasBalcony" value="true"/>
+    </bean>
+
+    <bean id="rentThreeBHK" class="com.property.RentOfThreeBHKFlat">
+        <property name="noOfPerson" value="4"/>
+        <property name="hasBalcony" value="true"/>
+    </bean>
+</beans>
