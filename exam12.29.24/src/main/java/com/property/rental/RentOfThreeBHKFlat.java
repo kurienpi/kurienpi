@@ -1,20 +1,24 @@
 package com.property.rental;
-
-public class RentOfThreeBHKFlat extends RentOfFlat {
+public class RentOfThreeBHKFlat {
+    private int noOfPerson;
     private boolean hasBalcony;
+
+    public void setNoOfPerson(int noOfPerson) {
+        this.noOfPerson = noOfPerson;
+    }
 
     public void setHasBalcony(boolean hasBalcony) {
         this.hasBalcony = hasBalcony;
     }
 
-    @Override
-    public double calculateRentOfFlat(int noOfPerson) {
-        return 600 * noOfPerson;
+    public int getNoOfPerson() {
+        return noOfPerson;
     }
 
-    @Override
+    public boolean isHasBalcony() {
+        return hasBalcony;
+    }
+
     public void displayInfo() {
-        System.out.println("Rent for Three BHK Flat: " + calculateRentOfFlat(noOfPerson));
-        System.out.println("Has Balcony: " + hasBalcony);
     }
 }

@@ -1,4 +1,10 @@
 package com.property;
+import com.property.rental.RentOfOneBHKFlat;
+import com.property.rental.RentOfThreeBHKFlat;
+import com.property.rental.RentOfTwoBHKFlat;
+import com.property.selfowned.SelfOwnedOneBHKFlat;
+import com.property.selfowned.SelfOwnedThreeBHKFlat;
+import com.property.selfowned.SelfOwnedTwoBHKFlat;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

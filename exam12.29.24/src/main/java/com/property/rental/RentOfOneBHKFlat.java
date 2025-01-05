@@ -1,13 +1,16 @@
 package com.property.rental;
 
-public class RentOfOneBHKFlat extends RentOfFlat {
-    @Override
-    public double calculateRentOfFlat(int noOfPerson) {
-        return 250 * noOfPerson;
+public class RentOfOneBHKFlat {
+    private int noOfPerson;
+
+    public void setNoOfPerson(int noOfPerson) {
+        this.noOfPerson = noOfPerson;
     }
 
-    @Override
+    public int getNoOfPerson() {
+        return noOfPerson;
+    }
+
     public void displayInfo() {
-        System.out.println("Rent for One BHK Flat: " + calculateRentOfFlat(noOfPerson));
     }
 }

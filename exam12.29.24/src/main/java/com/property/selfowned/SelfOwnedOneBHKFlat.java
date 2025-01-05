@@ -9,12 +9,12 @@ public class SelfOwnedOneBHKFlat extends SelfOwnedFlat {
         return length * breadth * height;
     }
 
-    @Override
+    //@Override
     public double finalPriceOfFlat() {
         return 10000 * calculatePlot(length, breadth, height);
     }
 
-    @Override
+    //@Override
     public void displayInfo() {
         System.out.println("One BHK Self Owned Flat Price: " + finalPriceOfFlat());
     }
