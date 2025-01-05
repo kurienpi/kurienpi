@@ -60,4 +60,11 @@ public class User {
     public CharSequence getPassword() {
         return null;
     }
+
+    public Object getUserId() {
+        return null;
+    }
+
+    public void setName(String name) {
+    }
 }
