@@ -6,6 +6,7 @@
          version="4.0">
     <display-name>Zorba Registration System</display-name>
     <welcome-file-list>
+
         <welcome-file>registration.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
